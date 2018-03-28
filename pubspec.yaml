@@ -1,0 +1,7 @@
+name: condovox
+version: 0.0.1
+description: Wrapper do CondoVox, sistema de gestão de condomínios.
+author: Rodrigo Muniz <rodrigo.temiski1995@gmail.com>
+homepage: https://github.com/muniz95/condovox-dart
+dependencies:
+    http: any
