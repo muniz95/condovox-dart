@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:condovox/condovox.dart';
 
-main() {
-    print(login('usuario', 'senha'));
+main() async {
+  Cookie cookie = await login('usuario', 'senha');
+  print(cookie);
 }
