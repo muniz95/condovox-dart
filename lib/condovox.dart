@@ -10,9 +10,20 @@ Future<Cookie> login(user, pass) async {
   return new Cookie.fromSetCookieValue(response.headers['set-cookie']);
 }
 
-Future<String> assembleias(user, pass) async {
+Future<String> home(Cookie cookie) async {
+  Map<String, String> headers = {'cookie': cookie};
   http.Response response = await http.get(
-    'https://www.spaziochampville.com.br/assembleias'
+    'https://www.spaziochampville.com.br/',
+    headers: headers
   );
-  return response.headers['set-cookie'];
+  return response.body;
+}
+
+Future<String> assembleias(Cookie cookie) async {
+  Map<String, String> headers = {'cookie': cookie};
+  http.Response response = await http.get(
+    'https://www.spaziochampville.com.br/assembleias',
+    headers: headers
+  );
+  return response.body;
 }
