@@ -3,5 +3,5 @@ import 'package:condovox/condovox.dart';
 
 main() async {
   Cookie cookie = await login('user', 'pass');
-  print(await assembleias(cookie));
+  print(await votacao(cookie));
 }
