@@ -13,3 +13,4 @@ doc/api/
 
 # Other files and folders
 .c9/
+.env
