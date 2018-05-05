@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:condovox/src/models/achado.dart';
+import 'package:condovox/condovox.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';
 
@@ -29,13 +29,13 @@ Future<List<Achado>> achados(Cookie cookie) async {
   return Achado.listaAchados(response.body);
 }
 
-Future<String> administradora(Cookie cookie) async {
+Future<List<Administradora>> administradora(Cookie cookie) async {
   Map<String, String> headers = {'cookie': cookie};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/administradora',
     headers: headers
   );
-  return response.body;
+  return Administradora.listaAdministradoras(response.body);
 }
 
 Future<String> amigos(Cookie cookie) async {
@@ -47,13 +47,13 @@ Future<String> amigos(Cookie cookie) async {
   return response.body;
 }
 
-Future<String> assembleias(Cookie cookie) async {
+Future<List<Assembleia>> assembleias(Cookie cookie) async {
   Map<String, String> headers = {'cookie': cookie};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/assembleias',
     headers: headers
   );
-  return response.body;
+  return Assembleia.listaAssembleias(response.body);
 }
 
 Future<String> brigadaIncendio(Cookie cookie) async {
