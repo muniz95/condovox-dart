@@ -3,7 +3,7 @@ import 'package:condovox/condovox.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';
 
-Future<Cookie> login(user, pass) async {
+Future<Cookie> login(String user, String pass) async {
   http.Response response = await http.post(
     'https://www.spaziochampville.com.br/acesso/login',
     body: {"acesso_login": user, "acesso_senha": pass, "acesso_submit": ""}
@@ -12,7 +12,7 @@ Future<Cookie> login(user, pass) async {
 }
 
 Future<String> home(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/',
     headers: headers
@@ -21,7 +21,7 @@ Future<String> home(Cookie cookie) async {
 }
 
 Future<List<Achado>> achados(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/achados',
     headers: headers
@@ -30,7 +30,7 @@ Future<List<Achado>> achados(Cookie cookie) async {
 }
 
 Future<List<Administradora>> administradora(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/administradora',
     headers: headers
@@ -39,7 +39,7 @@ Future<List<Administradora>> administradora(Cookie cookie) async {
 }
 
 Future<String> amigos(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/amigos',
     headers: headers
@@ -48,7 +48,7 @@ Future<String> amigos(Cookie cookie) async {
 }
 
 Future<List<Assembleia>> assembleias(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/assembleias',
     headers: headers
@@ -57,7 +57,7 @@ Future<List<Assembleia>> assembleias(Cookie cookie) async {
 }
 
 Future<String> brigadaIncendio(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/brigada_incendio',
     headers: headers
@@ -66,7 +66,7 @@ Future<String> brigadaIncendio(Cookie cookie) async {
 }
 
 Future<String> sugestao(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/sugestao',
     headers: headers
@@ -75,7 +75,7 @@ Future<String> sugestao(Cookie cookie) async {
 }
 
 Future<String> carona(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/carona',
     headers: headers
@@ -84,7 +84,7 @@ Future<String> carona(Cookie cookie) async {
 }
 
 Future<String> classificados(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/classificados',
     headers: headers
@@ -93,7 +93,7 @@ Future<String> classificados(Cookie cookie) async {
 }
 
 Future<String> colaboradores(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/colaboradores',
     headers: headers
@@ -102,7 +102,7 @@ Future<String> colaboradores(Cookie cookie) async {
 }
 
 Future<String> conta(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/conta',
     headers: headers
@@ -111,7 +111,7 @@ Future<String> conta(Cookie cookie) async {
 }
 
 Future<String> correspondencias(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/encomendas',
     headers: headers
@@ -120,7 +120,7 @@ Future<String> correspondencias(Cookie cookie) async {
 }
 
 Future<String> documentos(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/documentos',
     headers: headers
@@ -129,7 +129,7 @@ Future<String> documentos(Cookie cookie) async {
 }
 
 Future<String> empregados(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/empregados',
     headers: headers
@@ -138,7 +138,7 @@ Future<String> empregados(Cookie cookie) async {
 }
 
 Future<String> enquetes(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/enquetes',
     headers: headers
@@ -147,7 +147,7 @@ Future<String> enquetes(Cookie cookie) async {
 }
 
 Future<String> eventos(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/eventos',
     headers: headers
@@ -156,7 +156,7 @@ Future<String> eventos(Cookie cookie) async {
 }
 
 Future<String> galeria(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/galeria',
     headers: headers
@@ -165,7 +165,7 @@ Future<String> galeria(Cookie cookie) async {
 }
 
 Future<String> listaAcesso(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/lista_acesso',
     headers: headers
@@ -174,7 +174,7 @@ Future<String> listaAcesso(Cookie cookie) async {
 }
 
 Future<String> mensagens(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/mensagens',
     headers: headers
@@ -183,7 +183,7 @@ Future<String> mensagens(Cookie cookie) async {
 }
 
 Future<String> notificacoes(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/notificacoes',
     headers: headers
@@ -192,7 +192,7 @@ Future<String> notificacoes(Cookie cookie) async {
 }
 
 Future<String> obras(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/obras',
     headers: headers
@@ -201,7 +201,7 @@ Future<String> obras(Cookie cookie) async {
 }
 
 Future<String> ocorrencias(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/ocorrencias',
     headers: headers
@@ -210,7 +210,7 @@ Future<String> ocorrencias(Cookie cookie) async {
 }
 
 Future<String> avisos(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/avisos',
     headers: headers
@@ -219,7 +219,7 @@ Future<String> avisos(Cookie cookie) async {
 }
 
 Future<String> pets(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/pets',
     headers: headers
@@ -228,7 +228,7 @@ Future<String> pets(Cookie cookie) async {
 }
 
 Future<String> reservas(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/reservas',
     headers: headers
@@ -237,7 +237,7 @@ Future<String> reservas(Cookie cookie) async {
 }
 
 Future<String> unidade(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/unidade',
     headers: headers
@@ -246,7 +246,7 @@ Future<String> unidade(Cookie cookie) async {
 }
 
 Future<String> visita_prestadores(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/visita_prestadores',
     headers: headers
@@ -255,7 +255,7 @@ Future<String> visita_prestadores(Cookie cookie) async {
 }
 
 Future<String> veiculo(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/veiculo',
     headers: headers
@@ -264,7 +264,7 @@ Future<String> veiculo(Cookie cookie) async {
 }
 
 Future<String> vizinhos(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/vizinhos',
     headers: headers
@@ -273,7 +273,7 @@ Future<String> vizinhos(Cookie cookie) async {
 }
 
 Future<String> votacao(Cookie cookie) async {
-  Map<String, String> headers = {'cookie': cookie};
+  Map<String, String> headers = {'cookie': '$cookie'};
   http.Response response = await http.get(
     'https://www.spaziochampville.com.br/votacao',
     headers: headers

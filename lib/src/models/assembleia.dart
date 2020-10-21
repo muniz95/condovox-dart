@@ -20,7 +20,7 @@ class Assembleia {
 
   static List<Assembleia> listaAssembleias(String html) {
     Document document = parseStringToHTML(html);
-    List<Element> rows = document.getElementsByTagName('tr');
+    List<Element> rows = document.querySelectorAll('tr.ativado');
     List<Assembleia> assembleias = new List<Assembleia>();
     rows.forEach((Element row) {
       assembleias.add(new Assembleia.fromHTML(row));
