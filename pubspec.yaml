@@ -7,3 +7,4 @@ dependencies:
     http:
     html:
     dotenv:
+    test:

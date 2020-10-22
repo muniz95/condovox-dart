@@ -4,6 +4,12 @@ import 'package:http/http.dart' as http;
 import 'dart:io';
 
 Future<Cookie> login(String user, String pass) async {
+  if (user.isEmpty) {
+    throw Exception("Deve ser informado o login");
+  }
+  if (pass.isEmpty) {
+    throw Exception("Deve ser informada a senha");
+  }
   http.Response response = await http.post(
     'https://www.spaziochampville.com.br/acesso/login',
     body: {"acesso_login": user, "acesso_senha": pass, "acesso_submit": ""}
